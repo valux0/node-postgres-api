@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Flores</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #b7c27a;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #6e8f3d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    /* CONTENEDOR GENERAL */
+    .container {
+      display: flex;
+      padding: 30px;
+    }
+
+    /* COLUMNA IZQUIERDA */
+    .left {
+      width: 30%;
+      padding-right: 30px;
+    }
+
+    .left h2 {
+      font-size: 28px;
+    }
+
+    .left input {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border: 1px solid #999;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .btn {
+      margin-top: 10px;
+      padding: 12px;
+      width: 100%;
+      background-color: #4f6f2f;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #3d5723;
+    }
+
+    /* DIVISOR */
+    .divider {
+      width: 2px;
+      background-color: black;
+      margin: 0 20px;
+    }
+
+    /* COLUMNA DERECHA */
+    .right {
+      width: 70%;
+      text-align: center;
+    }
+
+    .right h2 {
+      font-size: 30px;
+    }
+
+    .btn-load {
+      margin: 15px;
+      padding: 12px 30px;
+      background-color: #4f6f2f;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* TABLA */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #c5cf8f;
+    }
+
+    table th, table td {
+      border: 1px solid black; /* más delgado */
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    table th {
+      background-color: #aab66c;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    🌸 Flores 🌸
+  </header>
+
+  <div class="container">
+
+    <!-- IZQUIERDA -->
+    <div class="left">
+      <h2>Agregar flor:</h2>
+
+      <form id="formPlanta">
+        <input type="text" id="id" placeholder="ID">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="text" id="nombre_cientifico" placeholder="Nombre científico">
+        <input type="text" id="tipo" placeholder="Tipo">
+        <input type="text" id="riego" placeholder="Riego">
+        <input type="text" id="luz" placeholder="Luz">
+        <input type="number" id="altura_cm" placeholder="Altura (cm)">
+        <input type="date" id="fecha_registro">
+        <input type="file" id="imagen">   
+        <button type="submit" class="btn">GUARDAR</button>
+      </form>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- DERECHA -->
+    <div class="right">
+      <h2>Lista de flores</h2>
+
+      <button onclick="getPlantas()" class="btn-load">CARGAR FLORES</button>
+
+      <table id="tabla">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Científico</th>
+            <th>Tipo</th>
+            <th>Riego</th>
+            <th>Luz</th>
+            <th>Altura</th>
+	    <th>Fecha</th> 
+            <th>Imagen</th>	    
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-body">
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script src="callrestapi.js"></script>
+
+</body>
+</html>
