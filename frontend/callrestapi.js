@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3300/plantas";
+const API_URL = "http://localhost:8081/plantas";
 console.log("JS CARGADO");
 
 // 🔍 GET - Obtener plantas
